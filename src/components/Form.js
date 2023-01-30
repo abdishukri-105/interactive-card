@@ -19,7 +19,7 @@ const Form = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none" id="cardholdername"
-        aria-describedby="emailHelp" placeholder="cardholder name"/>
+        aria-describedby="emailHelp" placeholder="felicia reile"/>
     </div>
     <div class="form-group mb-3">
       <label for="cardnumber" class="form-label inline-block mb-2 text-gray-700">card number</label>
@@ -37,7 +37,7 @@ const Form = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none" id="exampleInputPassword1"
-        placeholder="card number"/>
+        placeholder="2443 3433 5566 5656 "/>
     </div>
  
      
@@ -87,7 +87,7 @@ const Form = () => {
       uppercase
       rounded
       shadow-md
-      hover:bg-purple-900 hover:shadow-lg
+      hover:bg-purple-600 hover:shadow-lg
       focus:bg-purple-900 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-purple-900 active:shadow-lg
       transition
