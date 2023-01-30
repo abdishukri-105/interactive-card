@@ -10,7 +10,6 @@ const CardContainer = () => {
               <FrontSide />
               <BackSide/>
             </div>
-
             <Form />
         </div>
      );
