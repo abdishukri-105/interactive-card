@@ -4,6 +4,7 @@ import Form from "./Form";
 import { useState } from "react";
 const CardContainer = () => {
    const [cardDetails, setCardDetails] = useState([])
+
     // store all inputs in object set it to empty
     const [formData, setFormData] = useState({
         cardHolderName:  "",
@@ -15,11 +16,18 @@ const CardContainer = () => {
     })
    // submit the form here
     const handleSubmit = (e) => {
-       e.preventDefault()
+        e.preventDefault()
         console.log(formData)
         const updatedCard = [...cardDetails, formData]
-            console.log('submit this',updatedCard)
-            setCardDetails(updatedCard)
+        console.log('submit this',updatedCard)
+        setCardDetails(updatedCard)
+        setFormData({
+            cardHolderName:  "",
+            cardNumber: "",
+            expMonth: "",
+            expYear: "",
+            cvv: "",
+        })
     }
 
     // take input from users 

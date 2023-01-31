@@ -4,17 +4,27 @@ import cardLogo from "../images/card-logo.svg"
 const frontSide = ({cardDetails}) => {
     console.log("frontside received this",cardDetails)
 
-    const frontsideDetails = cardDetails.map(cardDetail => {
-        return <div>
-               <p className="z-20 absolute top-40 left-8 w-64 text-white" >
-                 {cardDetail.cardNumber}
-                 </p>
-                <p className="z-20 absolute bottom-6 left-8 text-white">{cardDetail.cardHolderName}</p>
-                <p className="z-20 absolute bottom-6 right-20 text-white">{cardDetail.expMonth}</p>
+    let frontsideDetails;
 
-             </div>
-    })
-
+    if (cardDetails.length > 0) {
+        frontsideDetails = cardDetails.map(cardDetail => {
+            return <div>
+                   <p className="z-20 absolute top-40 left-8 w-64 text-white text-xl font-semibold" >
+                     {cardDetail.cardNumber}
+                     </p>
+                    <p className="z-20 absolute bottom-6 left-8 text-white" >{cardDetail.cardHolderName}</p>
+                    <p className="z-20 absolute bottom-6 right-20 text-white">{cardDetail.expMonth}</p>
+                 </div>
+        });
+    } else {
+        frontsideDetails = <div>
+            <p className="z-20 absolute top-40 left-8 w- text-xl font-semibold text-white" >
+              1234 4567 7788 4433
+              </p>
+             <p className="z-20 absolute bottom-6 left-8 text-white" >John Doe</p>
+             <p className="z-20 absolute bottom-6 right-20 text-white">MM/YY</p>
+           </div>
+    }
 
     return (  
         <div className="relative mb-3">
