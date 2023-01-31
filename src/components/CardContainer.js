@@ -3,7 +3,7 @@ import BackSide from "./BackSide";
 import Form from "./Form";
 import { useState } from "react";
 const CardContainer = () => {
-   
+   const [cardDetails, setCardDetails] = useState([])
     // store all inputs in object set it to empty
     const [formData, setFormData] = useState({
         cardHolderName:  "",
@@ -16,8 +16,12 @@ const CardContainer = () => {
    // submit the form here
     const handleSubmit = (e) => {
        e.preventDefault()
-       console.log(formData)
+        console.log(formData)
+        const updatedCard = [...cardDetails, formData]
+            console.log('submit this',updatedCard)
+            setCardDetails(updatedCard)
     }
+
     // take input from users 
     const handleChange = (e) => {
         const key = e.target.id
@@ -32,12 +36,15 @@ const CardContainer = () => {
 
     console.log(formData)
 
+   
+
+
     return ( 
         <div className=" flex mt-9 justify-center place-content-center" >
               
             <div className="   ">
-              <FrontSide />
-              <BackSide/>
+              <FrontSide cardDetails={cardDetails}/>
+              <BackSide  cardDetails={cardDetails} />
             </div>
             <Form formData={formData} handleSubmit={handleSubmit} handleChange = {handleChange} />
         </div>
