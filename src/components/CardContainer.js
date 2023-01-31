@@ -4,6 +4,8 @@ import Form from "./Form";
 import { useState } from "react";
 const CardContainer = () => {
    const [cardDetails, setCardDetails] = useState([])
+   const [submitted, setSubmitted] = useState(false)
+   
 
     // store all inputs in object set it to empty
     const [formData, setFormData] = useState({
@@ -28,6 +30,8 @@ const CardContainer = () => {
             expYear: "",
             cvv: "",
         })
+        setSubmitted(true)
+       
     }
 
     // take input from users 
@@ -54,7 +58,7 @@ const CardContainer = () => {
               <FrontSide cardDetails={cardDetails}/>
               <BackSide  cardDetails={cardDetails} />
             </div>
-            <Form formData={formData} handleSubmit={handleSubmit} handleChange = {handleChange} />
+            <Form submitted={submitted} formData={formData} handleSubmit={handleSubmit} handleChange = {handleChange} />
         </div>
      );
 }

@@ -13,7 +13,8 @@ const frontSide = ({cardDetails}) => {
                      {cardDetail.cardNumber}
                      </p>
                     <p className="z-20 absolute bottom-6 left-8 text-white" >{cardDetail.cardHolderName}</p>
-                    <p className="z-20 absolute bottom-6 right-20 text-white">{cardDetail.expMonth}</p>
+                    <p className="z-20 absolute bottom-6 right-24 text-white">{cardDetail.expMonth}<span>/</span></p>
+                    <p className="z-20 absolute bottom-6 right-20 text-white">{cardDetail.expYear}</p>
                  </div>
         });
     } else {
@@ -22,7 +23,8 @@ const frontSide = ({cardDetails}) => {
               1234 4567 7788 4433
               </p>
              <p className="z-20 absolute bottom-6 left-8 text-white" >John Doe</p>
-             <p className="z-20 absolute bottom-6 right-20 text-white">MM/YY</p>
+             <p className="z-20 absolute bottom-6 right-24 text-white">MM<span>/</span></p>
+             <p className="z-20 absolute bottom-6 right-20 text-white">YY</p>
            </div>
     }
 
